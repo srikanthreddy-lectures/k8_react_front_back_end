@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: back-end-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: back
+  template:
+    metadata:
+      labels:
+        component: back
+    spec:
+      containers:
+        - name: express-back-end
+          image: scott2srikanth/realgrand-backend:latest
+          ports:
+            - containerPort: 5000
+
+
+kind: Service
+metadata:
+  name: back-node-port
+spec:
+  type: NodePort
+  ports:
+    - port: 5000
+      targetPort: 5000
+      nodePort: 31516
+  selector:
+    component: back
