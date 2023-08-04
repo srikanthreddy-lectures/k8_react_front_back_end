@@ -8,7 +8,7 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
-sudo -i
+
 curl -LO "https://github.com/containernetworking/plugins/releases/download/v1.3.0/cni-plugins-linux-amd64-v1.3.0.tgz"
 sudo mkdir -p "/opt/cni/bin"
 sudo tar -xf "cni-plugins-linux-amd64-v1.3.0.tgz" -C "/opt/cni/bin"
