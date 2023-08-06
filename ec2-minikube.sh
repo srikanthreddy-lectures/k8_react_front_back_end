@@ -23,10 +23,12 @@ sudo tar zxvf crictl-v1.26.0-linux-amd64.tar.gz -C /usr/local/bin
 
 git clone https://github.com/Mirantis/cri-dockerd.git
 
+wget https://dl.google.com/go/go1.20.5.linux-amd64.tar.gz
+sudo tar -xvf go1.20.5.linux-amd64.tar.gz
+sudo mv go /usr/local
+echo 'export PATH=$PATH:/usr/local/go/bin' >>~/.bash_profile
+rm "go1.20.5.linux-amd64.tar.gz"
 
-wget https://storage.googleapis.com/golang/getgo/installer_linux
-chmod +x ./installer_linux
-./installer_linux
 source ~/.bash_profile
 cd cri-dockerd
 mkdir bin
