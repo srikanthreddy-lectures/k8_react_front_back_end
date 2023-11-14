@@ -16,7 +16,7 @@ spec:
       - name: backend
         image: scott2srikanth/realgrand_backend
         ports:
-        - containerPort: 5000
+        - containerPort: 3002
 ---
 apiVersion: v1
 kind: Service
